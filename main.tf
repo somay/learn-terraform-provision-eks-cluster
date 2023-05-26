@@ -48,7 +48,7 @@ module "eks" {
   version = "19.5.1"
 
   cluster_name    = local.cluster_name
-  cluster_version = "1.24"
+  cluster_version = "1.26"
 
   vpc_id                         = module.vpc.vpc_id
   subnet_ids                     = module.vpc.private_subnets
@@ -81,9 +81,9 @@ module "eks" {
     }
   }
 }
-    
 
-# https://aws.amazon.com/blogs/containers/amazon-ebs-csi-driver-is-now-generally-available-in-amazon-eks-add-ons/ 
+
+# https://aws.amazon.com/blogs/containers/amazon-ebs-csi-driver-is-now-generally-available-in-amazon-eks-add-ons/
 data "aws_iam_policy" "ebs_csi_policy" {
   arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
 }
